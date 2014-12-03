@@ -426,10 +426,10 @@ Singleton objects should use a thread-safe pattern for creating their shared ins
 ```
 This will prevent [possible and sometimes prolific crashes](http://cocoasamurai.blogspot.com/2011/04/singletons-your-doing-them-wrong.html).
 
-Singletons should disable the use of the init method to elimiate the possibility that a developer improperly initializes the class.
+Singletons should also disable the use of the init method to eliminate the ability for developers to improperly initialize the singleton class.
 
 ```objc
--(instancetype) init __attribute__((unavailable("This is a singleton, please use the sharedInstance.")));
+- (instancetype)init __attribute__((unavailable("This is a singleton, please use + (instanceType)sharedInstance.")));
 ```
 
 ## Imports

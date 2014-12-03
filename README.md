@@ -423,14 +423,14 @@ Singleton objects should use a thread-safe pattern for creating their shared ins
 
    return sharedInstance;
 }
-'''
+```
 This will prevent [possible and sometimes prolific crashes](http://cocoasamurai.blogspot.com/2011/04/singletons-your-doing-them-wrong.html).
 
 Singletons should disable the use of the init method to elimiate the possibility that a developer improperly initializes the class.
 
-'''objc
+```objc
 -(instancetype) init __attribute__((unavailable("This is a singleton, please use the sharedInstance.")));
-``'
+```
 
 ## Imports
 
